@@ -29,6 +29,9 @@ $rose: #FF4874
 $yellow: #FFFF00
 $black: #000
 $acqua: #81FFD0
+$green: #3AD800
+$red: #F72323
+$grey: #333333
 
 body
 	width: 100% !important
@@ -49,12 +52,22 @@ div.logo
 
 h1,h2,h3,h4,h5,h6	
 	margin: px-to-em(10px) 0 0 0 
-	color: $rose
+	color: $red
 	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif
 	font-weight: bold
-	line-height: px-to-em(16px)
+	line-height: px-to-em(12px)
 h1
 	font-size: px-to-em(36px)
+	&.santa
+		font-size: px-to-em(80px)
+	.grinch
+		color: $green
+		z-index: 999
+		position: relative
+	.diabetes
+		color: $green
+		font-size: px-to-em(8px)
+		line-height: px-to-em(12px)
 h2
 	font-size: px-to-em(32px)
 h3
@@ -75,13 +88,19 @@ hr.border
 img
 	width: 100%
 	max-width: 100%
+	
+	&.noscale
+		width: auto !important
+		margin: 10px
 p
 	&.subtitle
 		font-size: px-to-em(18px)
 		margin: px-to-em(3px) 0 px-to-em(5px) 0
-		color: $rose
+		color: $grey
 		text-transform: uppercase
-		font-size: px-to-em(14px)
+		font-size: px-to-em(20px)
+		text-decoration: underline
+		text-indent: px-to-em(20px)
 	&.month
 		font-size: px-to-em(12px)
 		margin-top: px-to-em(5px)
@@ -112,11 +131,13 @@ table[id="external"]
 	td[id="externaltd"]
 		+container($break,$total-columns)
 		max-width: px-to-em(600px)
-		padding: $grid-padding*2 !important
+		padding: 0 !important
 		table[id="main"]
 			td[class="story"]
 				margin-top: px-to-em(20px)
-
+				padding: $grid-padding*2 !important
+			td[class="full"]
+				padding: 0 !important
 			
 				
 @media screen and (max-device-width: 480px), screen and (max-width: 480px)
@@ -166,7 +187,7 @@ table[id="external"]
 		td[id="externaltd"]
 			+set-container-width
 			position: relative
-			padding: $grid-padding*.5 !important
+			padding: 0 !important
 			table[id="main"]
 				width: columns($total-columns)
 	
